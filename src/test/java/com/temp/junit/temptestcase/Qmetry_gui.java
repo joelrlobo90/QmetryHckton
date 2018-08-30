@@ -1,21 +1,17 @@
 package com.temp.junit.temptestcase;
 
-import static org.junit.Assert.*;
-
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class Qmetry_gui {
 
 
 	WebDriver driver1;
-	@Before
+	/*@Before
 	public void openBrowser(){
 		//System.setProperty("webdriver.ie.driver","D:\\Softwares\\IEDriverServer.exe");
 		System.setProperty("webdriver.chrome.driver","D:\\Softwares\\chromedriver.exe");
@@ -28,9 +24,23 @@ public class Qmetry_gui {
 			driver1.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		System.out.println("url opened");
 		
-	}
+	}*/
 	@Test
 	public void testLogin() throws InterruptedException {
+		
+
+		//System.setProperty("webdriver.ie.driver","D:\\Softwares\\IEDriverServer.exe");
+		System.setProperty("webdriver.chrome.driver","D:\\Softwares\\chromedriver.exe");
+		
+		//WebDriver driver=new InternetExplorerDriver();
+		driver1=new ChromeDriver();
+		
+			driver1.get("https://www.makemytrip.com/");
+			driver1.manage().window().maximize();
+			driver1.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		System.out.println("url opened");
+		
+	
 		//Thread.sleep(15000);
 		try{
 			driver1.findElement(By.xpath(".//*[@id='header_tab_hotels']")).click();
